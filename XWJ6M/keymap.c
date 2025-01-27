@@ -100,7 +100,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     break;
     case ST_MACRO_1:
     if (record->event.pressed) {
-      SEND_STRING(SS_TAP(X_ENTER) SS_DELAY(100) SS_TAP(X_B));
+      SEND_STRING(SS_TAP(X_ENTER));
+      layer_move(1);
     }
     break;
     case ST_MACRO_2:
