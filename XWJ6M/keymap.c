@@ -12,7 +12,7 @@ enum custom_keycodes {
 };
 
 
-#define DUAL_FUNC_0 LT(8, KC_F14)
+#define DUAL_FUNC_0 LT(11, KC_L)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_ergodox_pretty(
@@ -31,7 +31,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_M,           KC_A,           KC_S,           KC_D,           KC_F,           KC_G,                                                                           KC_TRANSPARENT, KC_H,           KC_J,           KC_K,           KC_RIGHT_SHIFT, KC_TRANSPARENT,
     KC_TRANSPARENT, DE_Y,           KC_X,           KC_C,           KC_V,           KC_B,           KC_K,                                           KC_MEDIA_PLAY_PAUSE,KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_H,                                                                                                           KC_LEFT_GUI,    KC_TRANSPARENT, TG(5),          TO(4),          KC_TRANSPARENT,
-                                                                                                    KC_DELETE,      KC_M,           TO(0),          TO(7),
+                                                                                                    KC_DELETE,      KC_M,           TO(0),          TG(7),
                                                                                                                     DE_Z,           LGUI(KC_P),
                                                                                     KC_TRANSPARENT, KC_J,           KC_O,           LALT(KC_TAB),   TO(0),          KC_TRANSPARENT
   ),
