@@ -11,17 +11,19 @@ enum custom_keycodes {
   ST_MACRO_0,
   ST_MACRO_1,
   ST_MACRO_2,
+  DE_LSPO,
+  DE_RSPC,
 };
 
 
-#define DUAL_FUNC_0 LT(11, KC_L)
+#define DUAL_FUNC_0 LT(8, KC_I)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_ergodox_pretty(
     KC_ESCAPE,      KC_1,           KC_2,           KC_3,           KC_4,           KC_5,           KC_PC_CUT,                                      KC_DELETE,      KC_6,           KC_7,           KC_8,           KC_9,           KC_0,           KC_BSPC,
     KC_TAB,         KC_Q,           KC_W,           LT(2, KC_F),    KC_P,           LT(4, KC_B),    KC_PC_COPY,                                     KC_F5,          LT(4, KC_J),    KC_L,           LT(2, KC_U),    DE_Z,           DE_SS,          KC_TAB,
     MO(3),          MT(MOD_LGUI, KC_A),LT(2, KC_R),    MT(MOD_LCTL, KC_S),MT(MOD_LSFT, KC_T),KC_G,                                                                           KC_M,           MT(MOD_RSFT, KC_N),MT(MOD_RCTL, KC_E),LT(2, KC_I),    MT(MOD_RGUI, KC_O),MO(3),
-    KC_LEFT_SHIFT,  MT(MOD_LALT, DE_Y),KC_X,           KC_C,           KC_D,           KC_V,           KC_PC_PASTE,                                    KC_MEDIA_PLAY_PAUSE,KC_K,           KC_H,           KC_COMMA,       KC_DOT,         DUAL_FUNC_0,    KC_RIGHT_SHIFT,
+    DE_LSPO,        MT(MOD_LALT, DE_Y),KC_X,           KC_C,           KC_D,           KC_V,           KC_PC_PASTE,                                    KC_MEDIA_PLAY_PAUSE,KC_K,           KC_H,           KC_COMMA,       KC_DOT,         DUAL_FUNC_0,    DE_RSPC,
     KC_LEFT_CTRL,   KC_LEFT_ALT,    KC_LEFT,        KC_RIGHT,       KC_LEFT_GUI,                                                                                                    KC_LEFT_GUI,    KC_UP,          KC_DOWN,        KC_RIGHT_ALT,   KC_RIGHT_CTRL,
                                                                                                     LCTL(KC_H),     KC_MS_BTN1,     TO(1),          KC_RIGHT_ALT,
                                                                                                                     CW_TOGG,        KC_PSCR,
@@ -120,6 +122,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       SEND_STRING(SS_TAP(X_Z)SS_DELAY(100)  SS_LCTL(SS_TAP(X_KP_ASTERISK)));
     }
     break;
+    case DE_LSPO:
+      perform_space_cadet(record, keycode, KC_LSFT, KC_LSFT, KC_8);
+      return false;
+    case DE_RSPC:
+      perform_space_cadet(record, keycode, KC_LSFT, KC_LSFT, KC_9);
+      return false;
 
     case ST_MACRO_1:
     if (record->event.pressed) {

@@ -1,10 +1,12 @@
 #define KC_PC_CUT LCTL(KC_X)
 #define KC_PC_COPY LCTL(KC_C)
+#define DE_LPRN S(KC_8)
 #define DE_Y KC_Z
 #define KC_PC_PASTE LCTL(KC_V)
 #define DE_Z KC_Y
 #define DE_SS KC_MINS
 #define DE_SLSH S(KC_7)
+#define DE_RPRN S(KC_9)
 #define DE_EXLM S(KC_1)
 #define DE_DLR S(KC_4)
 #define DE_LCBR ALGR(KC_7)
@@ -12,8 +14,6 @@
 #define DE_AMPR S(KC_6)
 #define DE_MINS KC_SLSH
 #define DE_AT ALGR(KC_Q)
-#define DE_LPRN S(KC_8)
-#define DE_RPRN S(KC_9)
 #define DE_PIPE ALGR(KC_NUBS)
 #define DE_UNDS S(KC_SLSH)
 #define DE_HASH KC_NUHS
