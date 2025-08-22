@@ -14,7 +14,7 @@ enum custom_keycodes {
 };
 
 
-#define DUAL_FUNC_0 LT(8, KC_I)
+#define DUAL_FUNC_0 LT(1, KC_F24)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_ergodox_pretty(
@@ -39,7 +39,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
   [2] = LAYOUT_ergodox_pretty(
     KC_ESCAPE,      KC_F1,          KC_F2,          KC_F3,          KC_F4,          KC_F5,          KC_F11,                                         KC_F12,         KC_F6,          KC_F7,          KC_F8,          KC_F9,          KC_F10,         KC_F11,
-    KC_TRANSPARENT, DE_EXLM,        DE_DLR,         DE_LCBR,        DE_RCBR,        DE_AMPR,        ST_MACRO_0,                                     KC_TRANSPARENT, DE_DQUO,        KC_7,           KC_8,           KC_9,           DE_ASTR,        KC_TRANSPARENT,
+    KC_TRANSPARENT, DE_EXLM,        DE_DLR,         DE_LCBR,        DE_RCBR,        DE_AMPR,        ST_MACRO_0,                                     KC_TRANSPARENT, DE_DQUO,        KC_7,           KC_8,           KC_9,           DE_ASTR,        KC_GRAVE,
     MO(4),          DE_MINS,        DE_AT,          DE_LPRN,        DE_RPRN,        DE_PIPE,                                                                        DE_QUOT,        KC_4,           KC_5,           KC_6,           DE_PLUS,        MO(4),
     KC_TRANSPARENT, DE_UNDS,        DE_HASH,        DE_LBRC,        DE_RBRC,        DE_TILD,        DE_CIRC,                                        KC_TRANSPARENT, DE_PERC,        KC_1,           KC_2,           KC_3,           DE_BSLS,        KC_TRANSPARENT,
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, DE_LABK,        DE_RABK,                                                                                                        KC_TRANSPARENT, KC_DOT,         KC_0,           DE_EQL,         KC_TRANSPARENT,
@@ -98,6 +98,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                                                     KC_SPACE,       KC_F9,          KC_DELETE,      KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT
   ),
 };
+
+
+
 
 
 
@@ -174,6 +177,4 @@ uint16_t layer_state_set_user(uint16_t state) {
   }
   return state;
 };
-
-
 
