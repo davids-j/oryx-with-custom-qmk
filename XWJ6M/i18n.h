@@ -26,6 +26,7 @@
 #define DE_2 KC_2
 #define DE_DQUO S(DE_2)
 #define DE_ASTR S(KC_RBRC)
+#define DE_GRV S(KC_EQL)
 #define DE_QUOT S(KC_NUHS)
 #define DE_PLUS KC_RBRC
 #define DE_PERC S(KC_5)
