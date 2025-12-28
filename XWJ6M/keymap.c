@@ -14,8 +14,9 @@ enum custom_keycodes {
 };
 
 
-#define DUAL_FUNC_0 LT(3, KC_J)
-#define DUAL_FUNC_1 LT(1, KC_2)
+#define DUAL_FUNC_0 LT(15, KC_F12)
+#define DUAL_FUNC_1 LT(13, KC_J)
+#define DUAL_FUNC_2 LT(8, KC_F6)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_ergodox_pretty(
@@ -23,10 +24,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TAB,         KC_Q,           KC_W,           LT(2, KC_F),    KC_P,           LT(5, KC_B),    KC_PC_COPY,                                     KC_F5,          LT(5, KC_J),    KC_L,           LT(2, KC_U),    DE_Z,           DE_SS,          KC_TAB,
     DUAL_FUNC_0,    MT(MOD_LGUI, KC_A),LT(2, KC_R),    MT(MOD_LCTL, KC_S),MT(MOD_LSFT, KC_T),KC_G,                                                                           KC_M,           MT(MOD_RSFT, KC_N),MT(MOD_RCTL, KC_E),LT(2, KC_I),    MT(MOD_RGUI, KC_O),MO(3),
     DE_LSPO,        MT(MOD_LALT, DE_Y),KC_X,           KC_C,           KC_D,           KC_V,           KC_PC_PASTE,                                    KC_MEDIA_PLAY_PAUSE,KC_K,           KC_H,           KC_COMMA,       KC_DOT,         DUAL_FUNC_1,    DE_RSPC,
-    KC_LEFT_CTRL,   KC_LEFT_ALT,    KC_LEFT,        KC_RIGHT,       KC_LEFT_GUI,                                                                                                    KC_LEFT_GUI,    KC_UP,          KC_DOWN,        KC_RIGHT_ALT,   KC_RIGHT_CTRL,
+    KC_LEFT_CTRL,   KC_LEFT_ALT,    KC_LEFT,        KC_RIGHT,       KC_ESCAPE,                                                                                                      DUAL_FUNC_2,    KC_UP,          KC_DOWN,        KC_RIGHT_ALT,   KC_RIGHT_CTRL,
                                                                                                     LCTL(KC_H),     KC_MS_BTN1,     TO(1),          KC_RIGHT_ALT,
                                                                                                                     CW_TOGG,        KC_PSCR,
-                                                                                    KC_SPACE,       KC_ESCAPE,      LM(3,MOD_LGUI), KC_MS_BTN2,     KC_BSPC,        KC_ENTER
+                                                                                    KC_SPACE,       KC_TAB,         LM(3,MOD_LGUI), KC_MS_BTN2,     KC_ENTER,       KC_BSPC
   ),
   [1] = LAYOUT_ergodox_pretty(
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_6,                                           LCTL(LSFT(KC_ESCAPE)),KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
@@ -112,6 +113,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 
 
+const uint16_t PROGMEM combo0[] = { KC_TAB, KC_ENTER, COMBO_END};
+
+combo_t key_combos[COMBO_COUNT] = {
+    COMBO(combo0, TO(4)),
+};
 
 
 
@@ -158,6 +164,21 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
           register_code16(KC_LEFT_ALT);
         } else {
           unregister_code16(KC_LEFT_ALT);
+        }  
+      }  
+      return false;
+    case DUAL_FUNC_2:
+      if (record->tap.count > 0) {
+        if (record->event.pressed) {
+          register_code16(KC_DELETE);
+        } else {
+          unregister_code16(KC_DELETE);
+        }
+      } else {
+        if (record->event.pressed) {
+          layer_move(2);
+        } else {
+          layer_move(2);
         }  
       }  
       return false;
