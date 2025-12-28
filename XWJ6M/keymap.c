@@ -14,9 +14,9 @@ enum custom_keycodes {
 };
 
 
-#define DUAL_FUNC_0 LT(12, KC_H)
-#define DUAL_FUNC_1 LT(5, KC_F7)
-#define DUAL_FUNC_2 LT(11, KC_F20)
+#define DUAL_FUNC_0 LT(13, KC_F7)
+#define DUAL_FUNC_1 LT(4, KC_0)
+#define DUAL_FUNC_2 LT(2, KC_0)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_ergodox_pretty(
@@ -34,10 +34,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TAB,         KC_Q,           KC_W,           KC_E,           KC_R,           KC_T,           KC_I,                                           LGUI(DE_Z),     KC_TRANSPARENT, KC_TRANSPARENT, KC_U,           KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
     KC_M,           KC_A,           KC_S,           KC_D,           KC_F,           KC_G,                                                                           KC_TRANSPARENT, KC_H,           KC_J,           KC_K,           KC_RIGHT_SHIFT, KC_TRANSPARENT,
     KC_TRANSPARENT, DE_Y,           KC_X,           KC_C,           KC_V,           KC_B,           KC_K,                                           KC_MEDIA_PLAY_PAUSE,KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
-    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_H,                                                                                                           KC_LEFT_GUI,    KC_TRANSPARENT, TG(6),          TO(5),          KC_TRANSPARENT,
+    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_U,           KC_H,                                                                                                           KC_LEFT_GUI,    KC_TRANSPARENT, TG(6),          TO(5),          KC_TRANSPARENT,
                                                                                                     KC_DELETE,      KC_M,           TO(0),          TG(8),
                                                                                                                     DE_Z,           LGUI(KC_P),
-                                                                                    KC_TRANSPARENT, KC_J,           KC_O,           LALT(KC_TAB),   TO(0),          KC_TRANSPARENT
+                                                                                    KC_SPACE,       KC_J,           KC_O,           LALT(KC_TAB),   TO(0),          KC_TRANSPARENT
   ),
   [2] = LAYOUT_ergodox_pretty(
     KC_ESCAPE,      KC_F1,          KC_F2,          KC_F3,          KC_F4,          KC_F5,          KC_F11,                                         KC_F12,         KC_F6,          KC_F7,          KC_F8,          KC_F9,          KC_F10,         KC_F11,
